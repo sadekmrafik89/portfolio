@@ -1,0 +1,11 @@
+Drop Verina's board exports into this folder (images/nile-graduation/) using
+these exact lowercase filenames — the page already points at them:
+
+  hero.jpg          Lead image — the aerial render of the whole complex
+  verina-cover.jpg  Title / cover board
+  verina-01.jpg     Location, concept & Level 1 plan; main elevation; Section A-A
+  verina-02.jpg     Level 2 plan (programme zoning); secondary elevation; Section B-B
+  verina-03.jpg     Level 3 plan (landscaped plaza); elevation; section
+  verina-04.jpg     Levels 4 & 5 plans; isometric; structure; environmental studies; aerial
+
+Tip: export boards <= 1800px on the long edge, JPG quality ~86.

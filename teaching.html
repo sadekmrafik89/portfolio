@@ -4,11 +4,28 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Teaching — Mohamed Rafik Sadek</title>
-<meta name="description" content="Teaching philosophy and courses across architecture and urban design." />
+<meta name="description" content="Teaching philosophy, graduation studios and courses across architecture and urban design." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Manrope:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
+<style>
+  .rows--thumb .row { grid-template-columns: auto 88px 1fr auto; align-items: center; column-gap: clamp(1rem, 3vw, 2.2rem); }
+  .row__thumb { width: 88px; aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: var(--raised); }
+  .row__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (max-width: 900px) {
+    .rows--thumb .row { grid-template-columns: auto 88px 1fr; }
+    .rows--thumb .row__aside { grid-column: 3; text-align: left; margin-top: 0.4rem; }
+  }
+  @media (max-width: 620px) {
+    .rows--thumb .row { grid-template-columns: 64px 1fr; }
+    .rows--thumb .row__no { display: none; }
+    .rows--thumb .row__thumb { width: 64px; }
+    .rows--thumb .row__aside { grid-column: 2; }
+  }
+  .video-embed { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: #000; }
+  .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+</style>
 </head>
 <body>
 
@@ -17,7 +34,7 @@
     <a class="brand" href="index.html">Mohamed Rafik<small>Sadek</small></a>
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
+      <a href="cv.html">About</a>
       <a href="work.html">Work</a>
       <a href="teaching.html" aria-current="page">Teaching</a>
       <a href="publications.html">Publications</a>
@@ -32,35 +49,43 @@
   <section class="pagehead wrap">
     <p class="tag reveal">/ 02 — TEACHING</p>
     <h1 class="display reveal">Teaching philosophy<br />&amp; the studios I lead.</h1>
-    <p class="lede reveal">A short statement on how I teach, followed by the courses I deliver across architecture and urban design.</p>
+    <p class="lede reveal">A short statement on how I teach, the graduation studios I supervise, and the courses I deliver across architecture and urban design.</p>
   </section>
 
-  <!-- Teaching philosophy band -->
   <section class="section--tight wrap">
     <div class="about reveal">
-      <div><div class="frame frame--43"><img src="images/placeholder.svg" alt="Studio" /></div></div>
+      <div><div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/5FYF1eOM8K0" title="Teaching philosophy — Mohamed Rafik Sadek" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
       <div class="about__body">
         <p class="tag">/ PHILOSOPHY</p>
-        <h2 class="display" style="margin-block:1rem 1.4rem">Design is learned by making, testing and defending.</h2>
-        <p>Replace this with your teaching philosophy statement &mdash; how you frame the studio, what you ask of students, and the tools and habits you build with them across a semester.</p>
-        <p>Keep it to two or three short paragraphs; it sets the tone for the course list below.</p>
+        <h2 class="display" style="margin-block:1rem 1.4rem">Education is a collaborative process, <em>not a passive one.</em></h2>
+        <p>My teaching philosophy in architecture is rooted in the belief that education is a dynamic, collaborative process rather than a passive lecture series. Inspired by holistic learning methods, I view architecture as a synthesis of art, science, and philosophy. I strive to create a democratic studio environment built on active feedback loops, project-based collaboration, and interactive, visual engagement that allows both teacher and student to learn simultaneously.</p>
+        <p>In practice, I provide individual guidance and immersive field visits to help students discover their unique architectural identities rather than forcing a specific school of thought. While I set the foundational milestones, I encourage students to challenge design boundaries and actively learn from one another. Moving forward, my ultimate goal is to deeply integrate environmental, social, and economic sustainability into the studio, preparing a new generation of climate-conscious architects to meet future challenges.</p>
       </div>
     </div>
   </section>
 
-  <!-- Course list -->
+  <!-- Graduation studios -->
+  <section class="section--tight wrap">
+    <div class="rule reveal"><span class="idx">&sect;</span><span class="lbl">Graduation studios</span></div>
+    <div class="rows reveal rows--thumb">
+      <a class="row" href="dau-graduation.html"><span class="row__thumb"><img src="images/dau-graduation/hero.jpg" alt="Dar Al Uloom graduation projects thumbnail" loading="lazy" /></span><span class="row__no">01</span><div class="row__main"><h3>Dar Al Uloom University &mdash; Graduation Projects</h3><p>Six final-year theses supervised at Dar Al Uloom University, Riyadh (ARC&nbsp;511) &mdash; Diriyah and Najdi-heritage projects, each shown as its full presentation board with the student&rsquo;s own film.</p></div><span class="row__aside">2026</span></a>
+      <a class="row" href="nile-graduation.html"><span class="row__thumb"><img src="images/nile-graduation/verina-cover.jpg" alt="Nile University graduation projects thumbnail" loading="lazy" /></span><span class="row__no">02</span><div class="row__main"><h3>Nile University &mdash; Graduation Projects</h3><p>Final-year theses co-supervised at Nile University (ARUD&nbsp;408, Graduation Project II) &mdash; beginning with Saagi, a filmmaking edutainment complex on the Nile at Aswan.</p></div><span class="row__aside">2025</span></a>
+      <a class="row" href="msa-graduation.html"><span class="row__thumb"><img src="images/msa-graduation/hero.jpg" alt="MSA University graduation projects thumbnail" loading="lazy" /></span><span class="row__no">03</span><div class="row__main"><h3>MSA University &mdash; Graduation Projects</h3><p>Four final-year theses supervised at MSA University, 6&nbsp;October City &mdash; each carried from concept and site strategy through to a fully resolved building.</p></div><span class="row__aside">2024</span></a>
+    </div>
+  </section>
+
+  <!-- Courses &amp; studios -->
   <section class="section--tight wrap" style="padding-bottom:clamp(4rem,9vw,8rem)">
-    <div class="rule reveal"><span class="idx">&sect;</span><span class="lbl">Courses</span></div>
-    <div class="rows reveal">
-      <a class="row" href="project.html"><span class="row__no">01</span><div class="row__main"><h3>Digital Fabrication</h3><p>Short course description &mdash; scope, tools, and what students produce.</p></div><span class="row__aside">STUDIO</span></a>
-      <a class="row" href="project.html"><span class="row__no">02</span><div class="row__main"><h3>Sustainable Building Envelope</h3><p>Short course description.</p></div><span class="row__aside">SEMINAR</span></a>
-      <a class="row" href="project.html"><span class="row__no">03</span><div class="row__main"><h3>Graduation Projects</h3><p>Short course description.</p></div><span class="row__aside">STUDIO</span></a>
-      <a class="row" href="project.html"><span class="row__no">04</span><div class="row__main"><h3>Urban Planning &amp; Design</h3><p>Short course description.</p></div><span class="row__aside">STUDIO</span></a>
-      <a class="row" href="project.html"><span class="row__no">05</span><div class="row__main"><h3>Architectural Design</h3><p>Short course description.</p></div><span class="row__aside">STUDIO</span></a>
-      <a class="row" href="project.html"><span class="row__no">06</span><div class="row__main"><h3>Advanced CAD</h3><p>Short course description.</p></div><span class="row__aside">LAB</span></a>
-      <a class="row" href="project.html"><span class="row__no">07</span><div class="row__main"><h3>Human Settlements</h3><p>Short course description.</p></div><span class="row__aside">SEMINAR</span></a>
-      <a class="row" href="project.html"><span class="row__no">08</span><div class="row__main"><h3>Architecture Computer Graphics</h3><p>Short course description.</p></div><span class="row__aside">LAB</span></a>
-      <a class="row" href="project.html"><span class="row__no">09</span><div class="row__main"><h3>The Student City Urban Studio</h3><p>Short course description.</p></div><span class="row__aside">STUDIO</span></a>
+    <div class="rule reveal"><span class="idx">&sect;</span><span class="lbl">Courses &amp; studios</span></div>
+    <div class="rows reveal rows--thumb">
+      <a class="row" href="architectural-design.html"><span class="row__thumb"><img src="images/architectural-design/galala-01.jpg" alt="Architectural Design studio thumbnail" loading="lazy" /></span><span class="row__no">01</span><div class="row__main"><h3>Architectural Design &mdash; Studios VI &amp; IV</h3><p>Two design studios at MSA University, with a thirty-four-student cohort carrying AI image generation into the earliest conceptual phase &mdash; from written narrative to building.</p></div><span class="row__aside">2022</span></a>
+      <a class="row" href="urban-planning-design.html"><span class="row__thumb"><img src="images/urban-planning-design/hero.jpg" alt="Urban Planning and Design studio thumbnail" loading="lazy" /></span><span class="row__no">02</span><div class="row__main"><h3>Urban Planning &amp; Design</h3><p>A studio reading 6&nbsp;October City through urban theory &mdash; the socio-economic dimensions of design and alternative approaches to urban problems &mdash; then redesigning real sites across three cycles.</p></div><span class="row__aside">2022&ndash;24</span></a>
+      <a class="row" href="human-settlements.html"><span class="row__thumb"><img src="images/human-settlements/hero.jpg" alt="Human Settlements in Developing Countries thumbnail" loading="lazy" /></span><span class="row__no">03</span><div class="row__main"><h3>Human Settlements in Developing Countries</h3><p>A studio built on a live brief from Egypt&rsquo;s New Valley Governorate &mdash; housing proposals for El Kharga City, co-taught with Dr&nbsp;Nermine AbdelGelil.</p></div><span class="row__aside">2023</span></a>
+      <a class="row" href="advanced-cad.html"><span class="row__thumb"><img src="images/advanced-cad/group.jpg" alt="Advanced CAD and Thermal Comfort course thumbnail" loading="lazy" /></span><span class="row__no">04</span><div class="row__main"><h3>Advanced CAD &amp; Thermal Comfort</h3><p>An elective summer course at MSA University &mdash; parametric modelling in Rhino and Grasshopper, solar and thermal-comfort simulation for LEED strategies, closed with 3D-printed models.</p></div><span class="row__aside">2022</span></a>
+      <a class="row" href="digital-fabrication.html"><span class="row__thumb"><img src="images/digital-fabrication/hero.jpg" alt="Digital Fabrication module thumbnail" loading="lazy" /></span><span class="row__no">05</span><div class="row__main"><h3>Digital Fabrication</h3><p>An elective summer module and workshop at MSA University &mdash; modelling, rendering and fabricating complex parametric designs through Python-based visual scripting.</p></div><span class="row__aside">2024</span></a>
+      <a class="row" href="architecture-computer-graphics.html"><span class="row__thumb"><img src="images/architecture-computer-graphics/haneen-1.jpg" alt="Architecture Computer Graphics module thumbnail" loading="lazy" /></span><span class="row__no">06</span><div class="row__main"><h3>Architecture Computer Graphics</h3><p>A 3D&nbsp;Max module across five terms &mdash; building architectural 3D environments, assigning materials and lighting, and exporting rendered visualizations with V-Ray and Arnold.</p></div><span class="row__aside">2021&ndash;23</span></a>
+      <a class="row" href="sustainable-envelope.html"><span class="row__thumb"><img src="images/sustainable-envelope/concept-diagram.jpg" alt="Sustainable building envelope seminar thumbnail" loading="lazy" /></span><span class="row__no">07</span><div class="row__main"><h3>The Sustainable Envelope</h3><p>A post-graduate seminar treating the building envelope as a climate system &mdash; how an assembly lowers energy demand and shapes indoor comfort through passive strategies.</p></div><span class="row__aside">Seminar</span></a>
+      <a class="row" href="student-city-urban-studio.html"><span class="row__thumb"><img src="images/student-city-urban-studio/hero.jpg" alt="The Student City urban studio thumbnail" loading="lazy" /></span><span class="row__no">08</span><div class="row__main"><h3>The Student City &mdash; Urban Studio</h3><p>A Design&nbsp;VII studio led by Desert City Mappers, reading 6&nbsp;October City through the eyes of the students who live in it &mdash; from survey to strategy.</p></div><span class="row__aside">2016</span></a>
     </div>
   </section>
 </main>

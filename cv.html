@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Curriculum Vitae — Mohamed Rafik Sadek</title>
+<meta name="description" content="Full biography and curriculum vitae of Mohamed Rafik Sadek, PhD — architect, urban planner and educator in environmental architecture and urbanism." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Manrope:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- CV-page graphical components — scoped here, built from the shared design tokens -->
+<style>
+  /* ---- timeline (experience / education) ---- */
+  .tl { }
+  .tl__item { display: grid; grid-template-columns: 6rem 1fr; gap: clamp(1.1rem, 3vw, 2.2rem); }
+  .tl__year { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--stone); text-align: right; padding-top: 0.35rem; white-space: nowrap; }
+  .tl__body { position: relative; border-left: 1px solid var(--line); padding: 0 0 clamp(1.9rem, 3vw, 2.6rem) clamp(1.4rem, 3vw, 2rem); }
+  .tl__item:last-child .tl__body { border-left-color: transparent; padding-bottom: 0; }
+  .tl__body::before { content: ""; position: absolute; left: -5px; top: 0.5rem; width: 9px; height: 9px; border-radius: 50%; background: var(--paper); border: 1px solid var(--ink); }
+  .tl__body h3 { font-family: var(--display); font-weight: 400; font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.15; letter-spacing: -0.01em; }
+  .tl__body p { color: var(--stone); font-size: 0.92rem; margin-top: 0.45rem; max-width: 64ch; }
+  .tl__body p strong { color: var(--ink-soft); font-weight: 600; }
+  .tl__loc { display: block; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.11em; text-transform: uppercase; color: var(--stone-2); margin-top: 0.6rem; }
+
+  /* ---- skills band ---- */
+  .cv-skills { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(1.8rem, 4vw, 3.5rem); align-items: start; }
+  .cv-block + .cv-block { margin-top: clamp(1.8rem, 3vw, 2.4rem); }
+  .cv-block__label { margin-bottom: 0.9rem; }
+
+  /* ---- chips ---- */
+  .chips { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+  .chip { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.03em; color: var(--ink-soft);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 0.5rem 0.82rem; background: var(--paper-2);
+    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); }
+  .chip:hover { border-color: var(--ink); transform: translateY(-1px); }
+
+  /* ---- language dot meters ---- */
+  .lang { display: flex; flex-direction: column; gap: 1.2rem; }
+  .lang__row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .lang__name { font-size: 0.98rem; }
+  .lang__name small { display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone-2); margin-top: 0.2rem; }
+  .dots { display: flex; gap: 0.42rem; flex: 0 0 auto; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--ink); }
+  .dot.on { background: var(--ink); }
+
+  /* ---- training cards ---- */
+  .tcard { border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper-2);
+    padding: clamp(1.15rem, 2vw, 1.5rem); transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); }
+  .tcard:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .tcard h3 { font-family: var(--display); font-weight: 400; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.01em; }
+  .tcard p { color: var(--stone); font-size: 0.87rem; margin-top: 0.5rem; }
+  .tcard .who { display: block; font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--stone-2); margin-top: 0.85rem; }
+
+  @media (max-width: 900px) {
+    .cv-skills { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .tl__item { grid-template-columns: 1fr; gap: 0.15rem; }
+    .tl__year { text-align: left; padding-top: 0; }
+    .tl__body { border-left: none; padding-left: 0; padding-bottom: clamp(1.6rem, 5vw, 2rem); }
+    .tl__body::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html">Mohamed Rafik<small>Sadek</small></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="cv.html">About</a>
+      <a href="work.html">Work</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="publications.html">Publications</a>
+      <a href="travels.html">Travels</a>
+      <a class="btn btn--line btn--sm" href="contact.html">Let&rsquo;s talk</a>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- ===================== PAGE HEAD ===================== -->
+  <section class="pagehead wrap">
+    <p class="tag reveal">/ CURRICULUM VITAE</p>
+    <h1 class="display reveal">A life between <em>studio</em>,<br />classroom &amp; city.</h1>
+    <p class="lede reveal">Mohamed Rafik Sadek, PhD &mdash; assistant professor and lecturer in environmental architecture and urbanism, working where sustainable design, environmental analysis and the changing city meet.</p>
+
+    <div class="hero__stats reveal">
+      <div class="stat"><span class="n">PhD</span><span class="k">Greenwich &middot; 2021</span></div>
+      <div class="stat"><span class="n">15+</span><span class="k">Years practice &amp; teaching</span></div>
+      <div class="stat"><span class="n">EN &middot; AR &middot; FR</span><span class="k">Languages</span></div>
+    </div>
+  </section>
+
+  <!-- ===================== BIO / ABOUT BAND ===================== -->
+  <section class="section--tight wrap">
+    <div class="about reveal">
+      <figure class="portrait">
+        <div class="portrait__ring"><img src="images/mohamed.jpg" alt="Portrait of Mohamed Rafik Sadek" /></div>
+        <figcaption>Mohamed Rafik Sadek, PhD</figcaption>
+      </figure>
+      <div class="about__body">
+        <p class="tag">/ BIOGRAPHY</p>
+        <h2 class="display">Sharing knowledge, shaping cities.</h2>
+        <p>A dedicated and hard-working educator interested in exploring ways to help the environment by teaching students how to make urban public space and architecture more sustainable and environmentally sound. His passion is the design of buildings that create social, economic and political empowerment in urban areas.</p>
+        <p>His path spans studio, classroom and research desk &mdash; from earth-building and parametric-design workshops across Europe, India and Egypt to competition entries and urban-research initiatives such as the &ldquo;Desert City Mappers&rdquo; mapping of informal services in desert cities. Research interests include desert-city planning, sustainable urbanism, community development, public-space design, housing, environmental analysis and parametric design.</p>
+
+        <ul class="contact__list" style="margin-top:1.8rem">
+          <li><span class="k">Email</span><a href="mailto:sadek.mrafik@gmail.com">sadek.mrafik@gmail.com</a></li>
+          <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/mohamed-rafik-sadek/" target="_blank" rel="noopener">/in/mohamed-rafik-sadek</a></li>
+          <li><span class="k">Based in</span><span>Riyadh, KSA &middot; Cairo, EG</span></li>
+          <li><span class="k">Nationality</span><span>Egyptian</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section--tight wrap">
+    <div class="rule reveal"><span class="idx">01</span><span class="lbl">Experience</span></div>
+    <div class="tl reveal">
+
+      <div class="tl__item">
+        <div class="tl__year">2025 &mdash;<br />Present</div>
+        <div class="tl__body">
+          <h3>Assistant Professor in Architecture Design</h3>
+          <p><strong>Dar Al Uloom University.</strong> Module leader for Graduation Project, Technical Installations and Landscape Design; head of the student-performance and field-training committees.</p>
+          <span class="tl__loc">Riyadh, KSA</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2021 &mdash;<br />2024</div>
+        <div class="tl__body">
+          <h3>Senior Architect &middot; Urban Planner &amp; Designer</h3>
+          <p><strong>Arab Designers Engineering Consultants (ADEC).</strong> A multidisciplinary firm serving multinational projects. Leading urban-planning and architectural design teams and producing comprehensive project proposals. <em>Part-time.</em></p>
+          <span class="tl__loc">Smart Village, EG</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2021 &mdash;<br />2025</div>
+        <div class="tl__body">
+          <h3>Assistant Professor / Lecturer in Architecture &amp; Urbanism</h3>
+          <p><strong>Modern Sciences and Arts University (MSA).</strong> Module leader across post-graduate sustainable-architecture and building-envelope design, architectural computer graphics (3ds Max, Rhino &amp; Grasshopper, Revit, Design Builder, Ladybug &amp; Honeybee), and undergraduate design, graduation and urban studios. Head of the registration and scheduling committees.</p>
+          <span class="tl__loc">Giza, EG</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2024 &mdash;<br />Present</div>
+        <div class="tl__body">
+          <h3>Fellow of Higher Education (FHEA)</h3>
+          <p><strong>University of Greenwich.</strong> Awarded on completion of the PGCert. Fellowship reference PR281324.</p>
+          <span class="tl__loc">London, UK</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2018 &mdash;<br />2021</div>
+        <div class="tl__body">
+          <h3>Graduate Researcher &amp; Teaching Assistant</h3>
+          <p><strong>University of Greenwich.</strong> Supervised Master&rsquo;s theses, assisted across post-graduate modules and contributed to research publications. <em>Part-time.</em></p>
+          <span class="tl__loc">London, UK</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2014 &mdash;<br />2017</div>
+        <div class="tl__body">
+          <h3>Assistant Lecturer</h3>
+          <p><strong>Modern Sciences and Arts University (MSA).</strong> Teaching across architecture and design modules.</p>
+          <span class="tl__loc">Giza, EG</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2014 &mdash;<br />2017</div>
+        <div class="tl__body">
+          <h3>Architect / Researcher</h3>
+          <p><strong>CLUSTER Cairo.</strong> Urban research and documentation on the contested built environment. <em>Part-time.</em></p>
+          <span class="tl__loc">Cairo, EG</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2012</div>
+        <div class="tl__body">
+          <h3>Architect / Researcher</h3>
+          <p><strong>CLUSTER Cairo.</strong> Research on issues of the built environment, including the restoration of a theatre. <em>Full-time.</em></p>
+          <span class="tl__loc">Cairo, EG</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2011</div>
+        <div class="tl__body">
+          <h3>Researcher (Trainee)</h3>
+          <p><strong>Bibliotheca Alexandrina.</strong> Research traineeship.</p>
+          <span class="tl__loc">Alexandria, EG</span>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2010</div>
+        <div class="tl__body">
+          <h3>Technical Architect (Trainee)</h3>
+          <p><strong>Dar Al Handasah.</strong> Technical architecture traineeship.</p>
+          <span class="tl__loc">Giza, EG</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="section--tight wrap">
+    <div class="rule reveal"><span class="idx">02</span><span class="lbl">Education</span></div>
+    <div class="tl reveal">
+
+      <div class="tl__item">
+        <div class="tl__year">2017 &mdash;<br />2021</div>
+        <div class="tl__body">
+          <h3>PhD, Sustainable Architecture &amp; Urbanism</h3>
+          <p><strong>University of Greenwich</strong>, London, UK.</p>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2013 &mdash;<br />2014</div>
+        <div class="tl__body">
+          <h3>MSc, International Project Management</h3>
+          <p><strong>University of Greenwich</strong>, London, UK.</p>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">2007 &mdash;<br />2012</div>
+        <div class="tl__body">
+          <h3>BSc, Architectural Engineering</h3>
+          <p><strong>Modern Sciences and Arts University</strong>, Giza, Egypt.</p>
+        </div>
+      </div>
+
+      <div class="tl__item">
+        <div class="tl__year">1994 &mdash;<br />2007</div>
+        <div class="tl__body">
+          <h3>National Baccalaureate</h3>
+          <p><strong>Coll&egrave;ge Saint Marc</strong>, Alexandria, Egypt.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== TRAINING & CERTIFICATION ===================== -->
+  <section class="section--tight wrap">
+    <div class="rule reveal"><span class="idx">03</span><span class="lbl">Training &amp; certification</span></div>
+    <div class="grid grid--3 reveal">
+
+      <div class="tcard">
+        <h3>Rammed Earth &amp; Adobe Training</h3>
+        <p>Stuttgart, Germany &mdash; with Martin Rauch and Adel Fahmy.</p>
+        <span class="who">University of Stuttgart</span>
+      </div>
+
+      <div class="tcard">
+        <h3>Compressed Earth Blocks (CEB)</h3>
+        <p>India &mdash; arches, vaults and domes, three-week training.</p>
+        <span class="who">Auroville Earth Institute</span>
+      </div>
+
+      <div class="tcard">
+        <h3>Rhino &amp; Grasshopper</h3>
+        <p>Parametric-design workflows with all related plug-ins.</p>
+        <span class="who">Algoritm Summer School, Rome</span>
+      </div>
+
+      <div class="tcard">
+        <h3>Ladybug &amp; Honeybee</h3>
+        <p>Environmental simulation and analysis &mdash; taught by Chris Mackey and Mostapha Sadeghipour.</p>
+        <span class="who">Algoritm Summer School, Rome</span>
+      </div>
+
+      <div class="tcard">
+        <h3>PGCert, Higher Education</h3>
+        <p>Post-graduate certificate in higher-education teaching.</p>
+        <span class="who">University of Greenwich</span>
+      </div>
+
+      <div class="tcard">
+        <h3>QGIS Mapping &amp; Analysis</h3>
+        <p>Spatial mapping and geographic analysis.</p>
+        <span class="who">University of Greenwich</span>
+      </div>
+
+      <div class="tcard">
+        <h3>Building Information Modelling</h3>
+        <p>Full Revit package.</p>
+        <span class="who">Modern Sciences &amp; Arts University</span>
+      </div>
+
+      <div class="tcard">
+        <h3>Presentation Masterclass</h3>
+        <p>Professional presentation and delivery.</p>
+        <span class="who">University of Greenwich</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS / SOFTWARE / LANGUAGES ===================== -->
+  <section class="section--tight wrap">
+    <div class="rule reveal"><span class="idx">04</span><span class="lbl">Skills, software &amp; languages</span></div>
+    <div class="cv-skills reveal">
+
+      <div>
+        <div class="cv-block">
+          <p class="tag tag--ink cv-block__label">/ COMPETENCIES</p>
+          <div class="chips">
+            <span class="chip">Sustainable design</span>
+            <span class="chip">Urban planning &amp; design</span>
+            <span class="chip">Architectural design</span>
+            <span class="chip">Critical pedagogy</span>
+            <span class="chip">University teaching</span>
+            <span class="chip">Technical writing</span>
+            <span class="chip">Project management</span>
+            <span class="chip">Research</span>
+            <span class="chip">Public speaking</span>
+          </div>
+        </div>
+
+        <div class="cv-block">
+          <p class="tag tag--ink cv-block__label">/ SOFTWARE</p>
+          <div class="chips">
+            <span class="chip">Rhino</span>
+            <span class="chip">Grasshopper</span>
+            <span class="chip">Ladybug &amp; Honeybee</span>
+            <span class="chip">Revit &middot; BIM</span>
+            <span class="chip">3ds Max</span>
+            <span class="chip">V-Ray</span>
+            <span class="chip">Corona</span>
+            <span class="chip">Lumion</span>
+            <span class="chip">Twinmotion</span>
+            <span class="chip">AutoCAD</span>
+            <span class="chip">QGIS</span>
+            <span class="chip">Photoshop</span>
+            <span class="chip">Illustrator</span>
+            <span class="chip">InDesign</span>
+            <span class="chip">Premiere</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-block">
+        <p class="tag tag--ink cv-block__label">/ LANGUAGES</p>
+        <div class="lang">
+          <div class="lang__row">
+            <span class="lang__name">English<small>Full professional</small></span>
+            <span class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></span>
+          </div>
+          <div class="lang__row">
+            <span class="lang__name">Arabic<small>Native</small></span>
+            <span class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span></span>
+          </div>
+          <div class="lang__row">
+            <span class="lang__name">French<small>Working proficiency</small></span>
+            <span class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SELECTED PUBLICATIONS ===================== -->
+  <section class="section--tight wrap">
+    <div class="rule reveal"><span class="idx">05</span><span class="lbl">Selected publications</span></div>
+    <div class="rows reveal">
+
+      <a class="row" href="https://www.tandfonline.com/doi/full/10.1080/16874048.2023.2259629" target="_blank" rel="noopener"><span class="row__no">01</span>
+        <div class="row__main"><h3>A smart green mashrabiyya-shutter design for residential applications in Egypt</h3>
+          <p>N. Abdel Gelil Mohamed, E. Hamid Abd El-Rahman &amp; M. Sadek.</p></div>
+        <span class="row__aside">HBRC JOURNAL &middot; 2023 &rarr;</span>
+      </a>
+
+      <a class="row" href="https://msaeng.journals.ekb.eg/article_291867.html" target="_blank" rel="noopener"><span class="row__no">02</span>
+        <div class="row__main"><h3>Artificial Intelligence as a pedagogical tool for architectural education</h3>
+          <p>M. Rafik Sadek &amp; N. Abdel Gelil Mohamed.</p></div>
+        <span class="row__aside">MSA ENG. JOURNAL &middot; 2023 &rarr;</span>
+      </a>
+
+      <a class="row" href="https://issuu.com/clustercairo/docs/street_vendors" target="_blank" rel="noopener"><span class="row__no">03</span>
+        <div class="row__main"><h3>Street Vendors and the Contestation of Public Space</h3>
+          <p>Part of a research team @ CLUSTER.</p></div>
+        <span class="row__aside">CLUSTER &middot; 2017 &rarr;</span>
+      </a>
+
+      <a class="row" href="https://issuu.com/clustercairo/docs/archiving_the_city_in_flux" target="_blank" rel="noopener"><span class="row__no">04</span>
+        <div class="row__main"><h3>Archiving the City in Flux</h3>
+          <p>Part of a research team @ CLUSTER.</p></div>
+        <span class="row__aside">CLUSTER &middot; 2013 &rarr;</span>
+      </a>
+
+    </div>
+    <p style="margin-top:2.2rem" class="reveal"><a class="btn btn--line" href="publications.html">All publications <span class="arw">&rarr;</span></a></p>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="section--tight wrap" style="padding-bottom:clamp(4rem,9vw,8rem)">
+    <div class="about reveal" style="grid-template-columns:1fr auto; align-items:center">
+      <div>
+        <p class="tag">/ CONTACT</p>
+        <h2 class="display" style="margin-top:1rem">Let&rsquo;s build something worth studying.</h2>
+      </div>
+      <a class="btn btn--fill" href="contact.html">Start a conversation <span class="arw">&rarr;</span></a>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="brand" href="index.html">Mohamed Rafik<small>Sadek</small></a>
+    <nav class="nav__links" style="position:static;transform:none;background:none;border:none;padding:0" aria-label="Footer">
+      <a href="work.html">Work</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="publications.html">Publications</a>
+      <a href="travels.html">Travels</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p class="footer__note">&copy; <span data-year>2026</span> Mohamed Rafik Sadek</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -3,12 +3,32 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Travels &amp; Photography — Mohamed Rafik Sadek</title>
-<meta name="description" content="A photographic archive from travels and fieldwork." />
+<title>Travels &amp; Photography &mdash; Mohamed Rafik Sadek</title>
+<meta name="description" content="A photographic archive from travels and fieldwork &mdash; cities, coastlines and architecture observed on the road." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Manrope:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
+<style>
+  /* Travels lightbox — scoped to this page, on-brand (paper/ink/hairline) */
+  .lb { position: fixed; inset: 0; z-index: 90; display: none; place-items: center;
+        background: rgba(22,24,28,0.92); padding: clamp(1rem,4vw,3rem); }
+  .lb.is-open { display: grid; }
+  .lb__img { max-width: min(92vw, 1100px); max-height: 86vh; width: auto; height: auto;
+             display: block; border: 1px solid rgba(255,255,255,0.14); background: #16181C; }
+  .lb__count { position: absolute; top: clamp(1rem,3vw,1.6rem); left: clamp(1rem,3vw,1.6rem);
+               font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em;
+               color: rgba(255,255,255,0.7); }
+  .lb__btn { position: absolute; background: none; border: 0; color: rgba(255,255,255,0.8);
+             cursor: pointer; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em;
+             padding: 0.6rem 0.9rem; transition: color 0.2s var(--ease); text-transform: uppercase; }
+  .lb__btn:hover { color: #fff; }
+  .lb__close { top: clamp(0.6rem,3vw,1.4rem); right: clamp(0.6rem,3vw,1.4rem); font-size: 1.4rem; padding: 0.3rem 0.7rem; }
+  .lb__nav { top: 50%; transform: translateY(-50%); font-size: 1.6rem; padding: 0.4rem 1rem; }
+  .lb__prev { left: clamp(0.2rem,2vw,1rem); }
+  .lb__next { right: clamp(0.2rem,2vw,1rem); }
+  @media (max-width: 640px){ .lb__nav { top: auto; bottom: 1rem; transform: none; } }
+</style>
 </head>
 <body>
 
@@ -17,7 +37,7 @@
     <a class="brand" href="index.html">Mohamed Rafik<small>Sadek</small></a>
     <nav class="nav__links" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
+      <a href="cv.html">About</a>
       <a href="work.html">Work</a>
       <a href="teaching.html">Teaching</a>
       <a href="publications.html">Publications</a>
@@ -30,24 +50,49 @@
 
 <main>
   <section class="pagehead wrap">
-    <p class="tag reveal">/ 04 — TRAVELS &amp; PHOTOGRAPHY</p>
-    <h1 class="display reveal">Notes from the field,<br />in light and shadow.</h1>
-    <p class="lede reveal">Photographs from travels and fieldwork. Drop your images in here &mdash; mix the frame ratios below for a natural editorial rhythm.</p>
+    <p class="tag reveal">/ 04 &mdash; TRAVELS &amp; PHOTOGRAPHY</p>
+    <h1 class="display reveal">Notes from the field,<br />in <em>light</em> and shadow.</h1>
+    <p class="lede reveal">A photographic archive gathered on the road &mdash; old cities and coastlines, courtyards and cathedrals, the quiet geometry of places passed through. Tap any frame to view it larger.</p>
   </section>
 
   <section class="section--tight wrap" style="padding-bottom:clamp(4rem,9vw,8rem)">
-    <div class="grid grid--3">
-      <a class="card reveal" href="#"><div class="frame frame--45"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-      <a class="card reveal" href="#"><div class="frame frame--11"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-      <a class="card reveal" href="#"><div class="frame frame--45"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-      <a class="card reveal card--wide" href="#"><div class="frame frame--169"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-      <a class="card reveal" href="#"><div class="frame frame--45"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-      <a class="card reveal" href="#"><div class="frame frame--11"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-      <a class="card reveal" href="#"><div class="frame frame--45"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-      <a class="card reveal" href="#"><div class="frame frame--45"><img src="images/placeholder.svg" alt="Photograph" /></div></a>
-    </div>
+    <div class="grid grid--3" id="gallery">
+      <a class="card reveal" href="images/travels/travel-01.jpg" data-shot="0"><div class="frame frame--11"><img src="images/travels/travel-01.jpg" alt="Travel photograph 1" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-02.jpg" data-shot="1"><div class="frame frame--11"><img src="images/travels/travel-02.jpg" alt="Travel photograph 2" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-03.jpg" data-shot="2"><div class="frame frame--11"><img src="images/travels/travel-03.jpg" alt="Travel photograph 3" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-04.jpg" data-shot="3"><div class="frame frame--11"><img src="images/travels/travel-04.jpg" alt="Travel photograph 4" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-05.jpg" data-shot="4"><div class="frame frame--11"><img src="images/travels/travel-05.jpg" alt="Travel photograph 5" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-06.jpg" data-shot="5"><div class="frame frame--11"><img src="images/travels/travel-06.jpg" alt="Travel photograph 6" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-07.jpg" data-shot="6"><div class="frame frame--11"><img src="images/travels/travel-07.jpg" alt="Travel photograph 7" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-08.jpg" data-shot="7"><div class="frame frame--11"><img src="images/travels/travel-08.jpg" alt="Travel photograph 8" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-09.jpg" data-shot="8"><div class="frame frame--11"><img src="images/travels/travel-09.jpg" alt="Travel photograph 9" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-10.jpg" data-shot="9"><div class="frame frame--11"><img src="images/travels/travel-10.jpg" alt="Travel photograph 10" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-11.jpg" data-shot="10"><div class="frame frame--11"><img src="images/travels/travel-11.jpg" alt="Travel photograph 11" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-12.jpg" data-shot="11"><div class="frame frame--11"><img src="images/travels/travel-12.jpg" alt="Travel photograph 12" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-13.jpg" data-shot="12"><div class="frame frame--11"><img src="images/travels/travel-13.jpg" alt="Travel photograph 13" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-14.jpg" data-shot="13"><div class="frame frame--11"><img src="images/travels/travel-14.jpg" alt="Travel photograph 14" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-15.jpg" data-shot="14"><div class="frame frame--11"><img src="images/travels/travel-15.jpg" alt="Travel photograph 15" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-16.jpg" data-shot="15"><div class="frame frame--11"><img src="images/travels/travel-16.jpg" alt="Travel photograph 16" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-17.jpg" data-shot="16"><div class="frame frame--11"><img src="images/travels/travel-17.jpg" alt="Travel photograph 17" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-18.jpg" data-shot="17"><div class="frame frame--11"><img src="images/travels/travel-18.jpg" alt="Travel photograph 18" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-19.jpg" data-shot="18"><div class="frame frame--11"><img src="images/travels/travel-19.jpg" alt="Travel photograph 19" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-20.jpg" data-shot="19"><div class="frame frame--11"><img src="images/travels/travel-20.jpg" alt="Travel photograph 20" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-21.jpg" data-shot="20"><div class="frame frame--11"><img src="images/travels/travel-21.jpg" alt="Travel photograph 21" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-22.jpg" data-shot="21"><div class="frame frame--11"><img src="images/travels/travel-22.jpg" alt="Travel photograph 22" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-23.jpg" data-shot="22"><div class="frame frame--11"><img src="images/travels/travel-23.jpg" alt="Travel photograph 23" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-24.jpg" data-shot="23"><div class="frame frame--11"><img src="images/travels/travel-24.jpg" alt="Travel photograph 24" loading="lazy" /></div></a>
+      <a class="card reveal" href="images/travels/travel-25.jpg" data-shot="24"><div class="frame frame--11"><img src="images/travels/travel-25.jpg" alt="Travel photograph 25" loading="lazy" /></div></a>    </div>
   </section>
 </main>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <span class="lb__count" id="lbCount"></span>
+  <button class="lb__btn lb__close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb__btn lb__nav lb__prev" id="lbPrev" aria-label="Previous">&larr;</button>
+  <img class="lb__img" id="lbImg" src="" alt="" />
+  <button class="lb__btn lb__nav lb__next" id="lbNext" aria-label="Next">&rarr;</button>
+</div>
 
 <footer class="footer">
   <div class="wrap footer__inner">
@@ -57,5 +102,36 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+/* Travels lightbox — progressive enhancement (links still open the image if JS is off) */
+(function () {
+  var shots = Array.prototype.slice.call(document.querySelectorAll('#gallery a.card'));
+  if (!shots.length) return;
+  var lb = document.getElementById('lb'), img = document.getElementById('lbImg'),
+      count = document.getElementById('lbCount');
+  var srcs = shots.map(function (a) { return a.getAttribute('href'); });
+  var cur = 0;
+  function show(i) {
+    cur = (i + srcs.length) % srcs.length;
+    img.src = srcs[cur];
+    count.textContent = String(cur + 1).padStart(2, '0') + ' / ' + srcs.length;
+  }
+  function open(i) { show(i); lb.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('is-open'); document.body.style.overflow = ''; img.src = ''; }
+  shots.forEach(function (a, i) {
+    a.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+  });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function () { show(cur - 1); });
+  document.getElementById('lbNext').addEventListener('click', function () { show(cur + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(cur - 1);
+    else if (e.key === 'ArrowRight') show(cur + 1);
+  });
+})();
+</script>
 </body>
 </html>

@@ -25,6 +25,8 @@
   }
   .video-embed { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: #000; }
   .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  /* philosophy band: align the film with the top of the text column */
+  .about--top { align-items: start; }
 </style>
 </head>
 <body>
@@ -53,7 +55,7 @@
   </section>
 
   <section class="section--tight wrap">
-    <div class="about reveal">
+    <div class="about about--top reveal">
       <div><div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/5FYF1eOM8K0" title="Teaching philosophy — Mohamed Rafik Sadek" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
       <div class="about__body">
         <p class="tag">/ PHILOSOPHY</p>
